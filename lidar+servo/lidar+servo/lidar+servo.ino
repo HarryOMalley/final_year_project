@@ -33,10 +33,10 @@ void loop() {
 	uint16_t strength = tfmini.getRecentSignalStrength();
 
 	// Display the measurement
-	Serial.print(dist);
-	Serial.print(" cm      sigstr: ");
-	Serial.println(strength);
+	Serial.println(dist);
+	//Serial.print(" cm      sigstr: ");
+	//Serial.println(strength);
 
 	// Wait some short time before taking the next measurement
-	delay(1);
+	delay(100);
 }

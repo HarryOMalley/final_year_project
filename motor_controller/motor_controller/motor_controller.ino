@@ -16,6 +16,15 @@
 
  http://engineer2you.blogspot.com
  */
+
+
+#include <SoftwareSerial.h>
+#include "TFMini.h"
+
+// Setup software serial port 
+SoftwareSerial myserial(10, 11);      // Uno RX (TFMINI TX), Uno TX (TFMINI RX)
+TFMini tfmini;
+
 String mySt = "";
 char myChar;
 boolean stringComplete = false;  // whether the string is complete
@@ -26,10 +35,11 @@ const byte pin_fwd = 4; //for H-bridge: run motor forward
 const byte pin_bwd = 5; //for H-bridge: run motor backward
 const byte pin_pwm = 6; //for H-bridge: motor speed
 int encoder = 0;
+double totalencoder;
 int m_direction = 0;
 int sv_speed = 100;     //this value is 0~255
 float pv_speed = 0;
-double set_speed = 100;
+double set_speed = 10;
 double e_speed = 0; //error of speed = set_speed - pv_speed
 double e_speed_pre = 0;  //last error of speed
 double e_speed_sum = 0;  //sum error of speed
@@ -41,15 +51,28 @@ int timer1_counter; //for timer
 int i = 0;
 
 
-void setup() {
+void setup() 
+{
+
+	// Step 1: Initialize hardware serial port (serial debug port)
+	Serial.begin(115200);
+
+	Serial.println("Initializing...");
+
+	// Step 2: Initialize the data rate for the SoftwareSerial port
+	myserial.begin(TFMINI_BAUDRATE);
+
+	// Step 3: Initialize the TF Mini sensor
+	tfmini.begin(&myserial);
+	tfmini.setSingleScanMode();
+
 	pinMode(pin_a, INPUT_PULLUP);
 	pinMode(pin_b, INPUT_PULLUP);
 	pinMode(pin_fwd, OUTPUT);
 	pinMode(pin_bwd, OUTPUT);
 	pinMode(pin_pwm, OUTPUT);
 	attachInterrupt(digitalPinToInterrupt(pin_a), detect_a, RISING);
-	// start serial port at 9600 bps:
-	Serial.begin(9600);
+
 	//--------------------------timer setup
 	noInterrupts();           // disable all interrupts
 	TCCR1A = 0;
@@ -70,9 +93,22 @@ void setup() {
 	analogWrite(pin_pwm, 0);   //stop motor
 	digitalWrite(pin_fwd, 0);  //stop motor
 	digitalWrite(pin_bwd, 0);  //stop motor
+	Serial.println("Done");
 }
 
-void loop() {
+void loop() 
+{
+
+	// Take one TF Mini distance measurement
+	tfmini.externalTrigger();
+	uint16_t dist = tfmini.getDistance();
+ uint16_t strength = tfmini.getRecentSignalStrength();
+
+	// Display the measurement
+	Serial.print(dist);
+	Serial.print(", ");
+	Serial.println(strength);
+
 	if (stringComplete) {
 
 
@@ -108,10 +144,12 @@ void loop() {
 		mySt = "";  //note: in code below, mySt will not become blank, mySt is blank until '\n' is received
 		stringComplete = false;
 	}
+	delay(25);
 }
 
 void detect_a() {
 	encoder += 1; //increasing encoder at new pulse
+	totalencoder += 1;
 	m_direction = digitalRead(pin_b); //read direction of motor
 }
 ISR(TIMER1_OVF_vect)        // interrupt service routine - tick every 0.1sec
@@ -120,10 +158,10 @@ ISR(TIMER1_OVF_vect)        // interrupt service routine - tick every 0.1sec
 	pv_speed = 60.0*(encoder / 2000.0) / 0.1;  //calculate motor speed, unit is rpm
 	encoder = 0;
 	//print out speed
-	if (Serial.available() <= 0) {
-		Serial.print("speed");
-		Serial.println(pv_speed);         //Print speed (rpm) value to Visual Studio
-	}
+	//if (Serial.available() <= 0) {
+	//	Serial.print("speed");
+	//	Serial.println(pv_speed);         //Print speed (rpm) value to Visual Studio
+	//}
 
 
 	//PID program
@@ -134,9 +172,9 @@ ISR(TIMER1_OVF_vect)        // interrupt service routine - tick every 0.1sec
 		e_speed_sum += e_speed; //sum of error
 		if (e_speed_sum > 5000) e_speed_sum = 5000;
 		if (e_speed_sum < -5000) e_speed_sum = -5000;
-		Serial.println(pwm_pulse);
-		Serial.println(set_speed);
-		Serial.println(e_speed);
+		//Serial.println(pwm_pulse);
+		//Serial.println(set_speed);
+		//Serial.println(e_speed);
 	}
 	else {
 		e_speed = 0;

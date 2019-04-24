@@ -1,0 +1,6 @@
+devel_space: /home/harry/project/pi/devel
+install: false
+install_space: /home/harry/project/pi/install
+profile: default
+source_space: /home/harry/project/pi/src
+workspace: /home/harry/project/pi

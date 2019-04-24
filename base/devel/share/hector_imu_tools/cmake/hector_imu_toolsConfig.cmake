@@ -1,1 +1,1 @@
-/home/harry/catkin_ws/devel/.private/hector_imu_tools/share/hector_imu_tools/cmake/hector_imu_toolsConfig.cmake
+/home/harry/project/base/devel/.private/hector_imu_tools/share/hector_imu_tools/cmake/hector_imu_toolsConfig.cmake

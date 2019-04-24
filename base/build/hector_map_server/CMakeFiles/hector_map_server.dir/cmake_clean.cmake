@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hector_map_server.dir/src/hector_map_server.cpp.o"
-  "/home/harry/catkin_ws/devel/.private/hector_map_server/lib/hector_map_server/hector_map_server.pdb"
-  "/home/harry/catkin_ws/devel/.private/hector_map_server/lib/hector_map_server/hector_map_server"
+  "/home/harry/project/base/devel/.private/hector_map_server/lib/hector_map_server/hector_map_server.pdb"
+  "/home/harry/project/base/devel/.private/hector_map_server/lib/hector_map_server/hector_map_server"
 )
 
 # Per-language clean rules from dependency scanning.

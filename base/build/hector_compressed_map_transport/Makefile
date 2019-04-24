@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/harry/catkin_ws/src/hector_slam/hector_compressed_map_transport
+CMAKE_SOURCE_DIR = /home/harry/project/base/src/hector_slam/hector_compressed_map_transport
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/harry/catkin_ws/build/hector_compressed_map_transport
+CMAKE_BINARY_DIR = /home/harry/project/base/build/hector_compressed_map_transport
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ install/fast: preinstall/fast
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/catkin_ws/build/hector_compressed_map_transport/CMakeFiles /home/harry/catkin_ws/build/hector_compressed_map_transport/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/project/base/build/hector_compressed_map_transport/CMakeFiles /home/harry/project/base/build/hector_compressed_map_transport/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/catkin_ws/build/hector_compressed_map_transport/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/project/base/build/hector_compressed_map_transport/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

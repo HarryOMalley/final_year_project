@@ -1,0 +1,8 @@
+prefix=/home/harry/project/base/install
+
+Name: pointcloud
+Description: Description of pointcloud
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/harry/project/base/install/lib 
+Requires: 

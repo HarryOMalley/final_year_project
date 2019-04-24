@@ -1,11 +1,11 @@
 file(REMOVE_RECURSE
   "CMakeFiles/hector_nav_msgs_generate_messages_eus"
-  "/home/harry/catkin_ws/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetRobotTrajectory.l"
-  "/home/harry/catkin_ws/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetSearchPosition.l"
-  "/home/harry/catkin_ws/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetNormal.l"
-  "/home/harry/catkin_ws/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetRecoveryInfo.l"
-  "/home/harry/catkin_ws/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetDistanceToObstacle.l"
-  "/home/harry/catkin_ws/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/manifest.l"
+  "/home/harry/project/base/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetNormal.l"
+  "/home/harry/project/base/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetSearchPosition.l"
+  "/home/harry/project/base/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetRobotTrajectory.l"
+  "/home/harry/project/base/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetDistanceToObstacle.l"
+  "/home/harry/project/base/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/srv/GetRecoveryInfo.l"
+  "/home/harry/project/base/devel/.private/hector_nav_msgs/share/roseus/ros/hector_nav_msgs/manifest.l"
 )
 
 # Per-language clean rules from dependency scanning.

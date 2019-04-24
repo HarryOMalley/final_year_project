@@ -1,8 +1,8 @@
-prefix=/home/harry/catkin_ws/install
+prefix=/home/harry/project/base/install
 
 Name: rplidar_ros
 Description: Description of rplidar_ros
 Version: 1.10.0
 Cflags: 
-Libs: -L/home/harry/catkin_ws/install/lib 
+Libs: -L/home/harry/project/base/install/lib 
 Requires: 

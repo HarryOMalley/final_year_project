@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/harry/catkin_ws/devel/.private/hector_map_tools/setup.sh
+    local-name: /home/harry/project/base/devel/.private/hector_map_tools/setup.sh

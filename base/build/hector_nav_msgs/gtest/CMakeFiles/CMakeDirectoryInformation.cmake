@@ -3,7 +3,7 @@
 
 # Relative path conversion top directories.
 set(CMAKE_RELATIVE_PATH_TOP_SOURCE "/usr/src/googletest")
-set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/harry/catkin_ws/build/hector_nav_msgs")
+set(CMAKE_RELATIVE_PATH_TOP_BINARY "/home/harry/project/base/build/hector_nav_msgs")
 
 # Force unix paths in dependencies.
 set(CMAKE_FORCE_UNIX_PATHS 1)

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/harry/catkin_ws/src/rplidar_ros
+CMAKE_SOURCE_DIR = /home/harry/project/base/src/rplidar_ros
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/harry/catkin_ws/build/rplidar_ros
+CMAKE_BINARY_DIR = /home/harry/project/base/build/rplidar_ros
 
 # Utility rule file for std_msgs_generate_messages_py.
 
@@ -67,6 +67,6 @@ CMakeFiles/std_msgs_generate_messages_py.dir/clean:
 .PHONY : CMakeFiles/std_msgs_generate_messages_py.dir/clean
 
 CMakeFiles/std_msgs_generate_messages_py.dir/depend:
-	cd /home/harry/catkin_ws/build/rplidar_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/harry/catkin_ws/src/rplidar_ros /home/harry/catkin_ws/src/rplidar_ros /home/harry/catkin_ws/build/rplidar_ros /home/harry/catkin_ws/build/rplidar_ros /home/harry/catkin_ws/build/rplidar_ros/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/harry/project/base/build/rplidar_ros && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/harry/project/base/src/rplidar_ros /home/harry/project/base/src/rplidar_ros /home/harry/project/base/build/rplidar_ros /home/harry/project/base/build/rplidar_ros /home/harry/project/base/build/rplidar_ros/CMakeFiles/std_msgs_generate_messages_py.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/std_msgs_generate_messages_py.dir/depend
 

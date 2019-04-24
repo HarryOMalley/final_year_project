@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/geotiff_writer.dir/src/geotiff_writer/geotiff_writer.cpp.o"
-  "/home/harry/catkin_ws/devel/.private/hector_geotiff/lib/libgeotiff_writer.pdb"
-  "/home/harry/catkin_ws/devel/.private/hector_geotiff/lib/libgeotiff_writer.so"
+  "/home/harry/project/base/devel/.private/hector_geotiff/lib/libgeotiff_writer.pdb"
+  "/home/harry/project/base/devel/.private/hector_geotiff/lib/libgeotiff_writer.so"
 )
 
 # Per-language clean rules from dependency scanning.

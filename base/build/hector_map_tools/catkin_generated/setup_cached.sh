@@ -7,7 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/harry/catkin_ws/devel/.private/hector_map_tools:$CMAKE_PREFIX_PATH"
-export PWD="/home/harry/catkin_ws/build/hector_map_tools"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/harry/catkin_ws/devel/.private/hector_map_tools/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/harry/catkin_ws/src/hector_slam/hector_map_tools:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/harry/project/base/devel/.private/hector_map_tools:$CMAKE_PREFIX_PATH"
+export PWD="/home/harry/project/base/build/hector_map_tools"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/harry/project/base/devel/.private/hector_map_tools/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/harry/project/base/src/hector_slam/hector_map_tools:$ROS_PACKAGE_PATH"

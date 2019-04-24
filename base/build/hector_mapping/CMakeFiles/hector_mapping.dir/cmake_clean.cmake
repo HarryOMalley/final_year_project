@@ -2,8 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/hector_mapping.dir/src/HectorMappingRos.cpp.o"
   "CMakeFiles/hector_mapping.dir/src/main.cpp.o"
   "CMakeFiles/hector_mapping.dir/src/PoseInfoContainer.cpp.o"
-  "/home/harry/catkin_ws/devel/.private/hector_mapping/lib/hector_mapping/hector_mapping.pdb"
-  "/home/harry/catkin_ws/devel/.private/hector_mapping/lib/hector_mapping/hector_mapping"
+  "/home/harry/project/base/devel/.private/hector_mapping/lib/hector_mapping/hector_mapping.pdb"
+  "/home/harry/project/base/devel/.private/hector_mapping/lib/hector_mapping/hector_mapping"
 )
 
 # Per-language clean rules from dependency scanning.

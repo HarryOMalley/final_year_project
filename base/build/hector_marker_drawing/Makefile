@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/harry/catkin_ws/src/hector_slam/hector_marker_drawing
+CMAKE_SOURCE_DIR = /home/harry/project/base/src/hector_slam/hector_marker_drawing
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/harry/catkin_ws/build/hector_marker_drawing
+CMAKE_BINARY_DIR = /home/harry/project/base/build/hector_marker_drawing
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -137,9 +137,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/catkin_ws/build/hector_marker_drawing/CMakeFiles /home/harry/catkin_ws/build/hector_marker_drawing/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/project/base/build/hector_marker_drawing/CMakeFiles /home/harry/project/base/build/hector_marker_drawing/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/catkin_ws/build/hector_marker_drawing/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/harry/project/base/build/hector_marker_drawing/CMakeFiles 0
 .PHONY : all
 
 # The main clean target

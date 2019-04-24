@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/harry/catkin_ws/devel/.private/rplidar_ros/setup.sh
+    local-name: /home/harry/project/base/devel/.private/rplidar_ros/setup.sh

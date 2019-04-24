@@ -1,6 +1,6 @@
-devel_space: /home/harry/catkin_ws/devel
+devel_space: /home/harry/project/base/devel
 install: false
-install_space: /home/harry/catkin_ws/install
+install_space: /home/harry/project/base/install
 profile: default
-source_space: /home/harry/catkin_ws/src
-workspace: /home/harry/catkin_ws
+source_space: /home/harry/project/base/src
+workspace: /home/harry/project/base

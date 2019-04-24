@@ -7,8 +7,7 @@
 # new environment variables
 
 # modified environment variables
-export CMAKE_PREFIX_PATH="/home/harry/catkin_ws/devel/.private/rplidar_ros:$CMAKE_PREFIX_PATH"
-export PWD="/home/harry/catkin_ws/build/rplidar_ros"
-export PYTHONPATH="/home/harry/catkin_ws/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/harry/catkin_ws/devel/.private/rplidar_ros/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
-export ROS_PACKAGE_PATH="/home/harry/catkin_ws/src/rplidar_ros:$ROS_PACKAGE_PATH"
+export CMAKE_PREFIX_PATH="/home/harry/project/base/devel/.private/rplidar_ros:$CMAKE_PREFIX_PATH"
+export PWD="/home/harry/project/base/build/rplidar_ros"
+export ROSLISP_PACKAGE_DIRECTORIES="/home/harry/project/base/devel/.private/rplidar_ros/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROS_PACKAGE_PATH="/home/harry/project/base/src/rplidar_ros:$ROS_PACKAGE_PATH"

@@ -6,13 +6,13 @@
 
 #IncludeRegexTransform: 
 
-/home/harry/catkin_ws/src/hector_slam/hector_imu_attitude_to_tf/src/imu_attitude_to_tf_node.cpp
+/home/harry/project/base/src/hector_slam/hector_imu_attitude_to_tf/src/imu_attitude_to_tf_node.cpp
 ros/ros.h
-/home/harry/catkin_ws/src/hector_slam/hector_imu_attitude_to_tf/src/ros/ros.h
+/home/harry/project/base/src/hector_slam/hector_imu_attitude_to_tf/src/ros/ros.h
 tf/transform_broadcaster.h
-/home/harry/catkin_ws/src/hector_slam/hector_imu_attitude_to_tf/src/tf/transform_broadcaster.h
+/home/harry/project/base/src/hector_slam/hector_imu_attitude_to_tf/src/tf/transform_broadcaster.h
 sensor_msgs/Imu.h
-/home/harry/catkin_ws/src/hector_slam/hector_imu_attitude_to_tf/src/sensor_msgs/Imu.h
+/home/harry/project/base/src/hector_slam/hector_imu_attitude_to_tf/src/sensor_msgs/Imu.h
 
 /opt/ros/melodic/include/geometry_msgs/Point.h
 string

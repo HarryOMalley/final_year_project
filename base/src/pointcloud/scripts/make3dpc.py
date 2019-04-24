@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 import rospy
 from std_msgs.msg import String
-
+from sensor_msgs.msg import LaserScan
 
 def callback(data):
     rospy.loginfo(rospy.get_caller_id() + "I heard %s", data.data)
@@ -15,7 +15,7 @@ def listener():
     # run simultaneously.
     rospy.init_node('pointcloud', anonymous=True)
 
-    rospy.Subscriber("/slam_out", String, callback)
+    rospy.Subscriber("scan", LaserScan, callback)
 
     # spin() simply keeps python from exiting until this node is stopped
     rospy.spin()

@@ -1,0 +1,8 @@
+prefix=/home/harry/Documents/Git/final_year_project/pc/install
+
+Name: pointcloud
+Description: Description of pointcloud
+Version: 0.0.0
+Cflags: 
+Libs: -L/home/harry/Documents/Git/final_year_project/pc/install/lib 
+Requires: 

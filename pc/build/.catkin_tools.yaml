@@ -1,0 +1,6 @@
+devel_space: /home/harry/Documents/Git/final_year_project/pc/devel
+install: false
+install_space: /home/harry/Documents/Git/final_year_project/pc/install
+profile: default
+source_space: /home/harry/Documents/Git/final_year_project/pc/src
+workspace: /home/harry/Documents/Git/final_year_project/pc

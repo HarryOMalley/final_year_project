@@ -1,0 +1,1 @@
+/home/harry/Documents/Git/final_year_project/pc/devel/.private/rplidar_ros/lib/pkgconfig/rplidar_ros.pc

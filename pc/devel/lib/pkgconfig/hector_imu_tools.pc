@@ -1,0 +1,1 @@
+/home/harry/Documents/Git/final_year_project/pc/devel/.private/hector_imu_tools/lib/pkgconfig/hector_imu_tools.pc

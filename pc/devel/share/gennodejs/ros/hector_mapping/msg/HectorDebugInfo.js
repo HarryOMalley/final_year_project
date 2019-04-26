@@ -1,0 +1,1 @@
+/home/harry/Documents/Git/final_year_project/pc/devel/.private/hector_mapping/share/gennodejs/ros/hector_mapping/msg/HectorDebugInfo.js

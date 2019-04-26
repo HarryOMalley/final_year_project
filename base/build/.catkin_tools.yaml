@@ -1,6 +1,6 @@
-devel_space: /home/harry/project/base/devel
+devel_space: /home/harry/Documents/Git/final_year_project/base/devel
 install: false
-install_space: /home/harry/project/base/install
+install_space: /home/harry/Documents/Git/final_year_project/base/install
 profile: default
-source_space: /home/harry/project/base/src
-workspace: /home/harry/project/base
+source_space: /home/harry/Documents/Git/final_year_project/base/src
+workspace: /home/harry/Documents/Git/final_year_project/base

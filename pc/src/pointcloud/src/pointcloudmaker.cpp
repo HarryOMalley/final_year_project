@@ -5,8 +5,15 @@
 #include "ros/ros.h"
 #include "std_msgs/String.h"
 #include "sensor_msgs/LaserScan.h"
+#include <pcl_ros/point_cloud.h>
+//#include <pcl/point_types.h>
+#include <boost/foreach.hpp>
+#include <pcl_conversions/pcl_conversions.h>
+#include <sensor_msgs/PointCloud.h>
 
-#define RAD2DEG(x) ((x)*180./M_PI)
+//#define RAD2DEG(x) ((x)*180./M_PI)
+
+ros::Publisher pub;
 
 /**
  * This tutorial demonstrates simple receipt of messages over the ROS system.
@@ -18,13 +25,36 @@ void scanCallback(const sensor_msgs::LaserScan::ConstPtr& scan)
     ROS_INFO("I heard a laser scan %s[%d]:", scan->header.frame_id.c_str(), count);
     ROS_INFO("angle_range, %f, %f", RAD2DEG(scan->angle_min), RAD2DEG(scan->angle_max));
     int length = scan->ranges.size(); // Will usually be 360
+
+
+
     //ROS_INFO("Number of entries: %i", length);
 //    for(int i = 0; i < count; i++) {
 //        float degree = RAD2DEG(scan->angle_min + scan->angle_increment * i);
 //        ROS_INFO(": [%f, %f]", degree, scan->ranges[i]);
 //    }
 }
+void callback(const sensor_msgs::PointCloudConstPtr& data)
+{
+    ROS_INFO("Received point cloud: %s", data->header.frame_id.c_str());
+    int count = data->points.size();
+    // making the new pointcloud
+    sensor_msgs::PointCloud heightAdjPC;
+    float z = (rand() % 100000);
+    z = z/50000;
+    ROS_INFO("Generated height = %f", z);
+    // appending a random height onto the pointcloud
+    heightAdjPC.header = data->header;
+    heightAdjPC.channels = data->channels;
+    heightAdjPC.points = data->points;
+    for(int i = 0; i<count; i++)
+    {
+        heightAdjPC.points[i].z = z;
+    }
+    heightAdjPC.header.stamp = ros::Time::now();
+    pub.publish (heightAdjPC);
 
+}
 
 int main(int argc, char **argv)
 {
@@ -46,6 +76,8 @@ int main(int argc, char **argv)
      * NodeHandle destructed will close down the node.
      */
     ros::NodeHandle nh;
+    std::string topic = nh.resolveName("slam_cloud");
+    uint32_t queue_size = 1;
 
     /**
      * The subscribe() call is how you tell ROS that you want to receive messages
@@ -65,8 +97,9 @@ int main(int argc, char **argv)
 
     ros::Subscriber scanSub;
 
-    scanSub=nh.subscribe<sensor_msgs::LaserScan>("/scan",1000,scanCallback);
+    ros::Subscriber sub = nh.subscribe(topic, queue_size, callback);
 
+    pub = nh.advertise<sensor_msgs::PointCloud> ("slam_cloud2", 1);
     /**
      * ros::spin() will enter a loop, pumping callbacks.  With this version, all
      * callbacks will be called from within this thread (the main one).  ros::spin()

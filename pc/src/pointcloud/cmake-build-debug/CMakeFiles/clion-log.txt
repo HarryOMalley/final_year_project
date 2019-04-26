@@ -15,6 +15,7 @@
 -- Using Python nosetests: /usr/bin/nosetests-2.7
 -- catkin 0.7.17
 -- BUILD_SHARED_LIBS is on
+-- Using these message generators: gencpp;geneus;genlisp;gennodejs;genpy
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/harry/Documents/Git/final_year_project/pc/src/pointcloud/cmake-build-debug

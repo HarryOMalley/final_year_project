@@ -13,6 +13,8 @@ std_msgs/String.h
 /home/harry/Documents/Git/final_year_project/pc/src/pointcloud/src/std_msgs/String.h
 sensor_msgs/LaserScan.h
 /home/harry/Documents/Git/final_year_project/pc/src/pointcloud/src/sensor_msgs/LaserScan.h
+sensor_msgs/Range.h
+/home/harry/Documents/Git/final_year_project/pc/src/pointcloud/src/sensor_msgs/Range.h
 pcl_ros/point_cloud.h
 -
 boost/foreach.hpp
@@ -932,6 +934,24 @@ ros/serialization.h
 ros/builtin_message_traits.h
 -
 ros/message_operations.h
+-
+
+/opt/ros/melodic/include/sensor_msgs/Range.h
+string
+-
+vector
+-
+map
+-
+ros/types.h
+-
+ros/serialization.h
+-
+ros/builtin_message_traits.h
+-
+ros/message_operations.h
+-
+std_msgs/Header.h
 -
 
 /opt/ros/melodic/include/std_msgs/Header.h

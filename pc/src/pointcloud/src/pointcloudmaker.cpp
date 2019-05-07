@@ -24,10 +24,13 @@ class callbacks
 {
 public:
     float lastRange;
+    int runTimes = 0;
     ros::Publisher pub;
+    ros::Publisher pubTotal;
     sensor_msgs::LaserScan lastScan;
     void scanCallback(const sensor_msgs::PointCloudConstPtr& data);
     void tfminiCallback(const sensor_msgs::Range& data);
+    sensor_msgs::PointCloud totalPointcloud;
 };
 
 /**
@@ -49,25 +52,47 @@ void callbacks::scanCallback(const sensor_msgs::PointCloudConstPtr& data)
 
     // making the new pointcloud
     sensor_msgs::PointCloud heightAdjPC;
-
-    float z = (rand() % 100000);
-    z = lastRange;
+    float z2 = lastRange;
+    if (lastRange = 0.72)
+    {
+        float z2 = (rand() % 500);
+        z2 += 1000;
+        z2 = z2/1000;
+    }
+    float z = (1.5 - z2)* 1.4;
     ROS_INFO("Setting height = %f", z);
-
+    if (runTimes == 0)
+    {
+        totalPointcloud.channels = data->channels;
+    }
     // appending a random height onto the pointcloud
     heightAdjPC.header = data->header;
     heightAdjPC.channels = data->channels;
     heightAdjPC.points = data->points;
+    totalPointcloud.channels[0].name = heightAdjPC.channels[0].name;
+    totalPointcloud.channels[1].name = heightAdjPC.channels[1].name;
+
+
+    int j = totalPointcloud.points.size();
     for(int i = 0; i<count; i++)
     {
+
         heightAdjPC.points[i].z = z;
+        totalPointcloud.points.push_back(heightAdjPC.points[i]);
+        totalPointcloud.channels[0].values.push_back(heightAdjPC.channels[0].values[i]);
+        totalPointcloud.channels[1].values.push_back(heightAdjPC.channels[1].values[i]);
     }
 
     heightAdjPC.header.stamp = ros::Time::now();
+    totalPointcloud.header.stamp = heightAdjPC.header.stamp;
+
+
     ROS_INFO("Publishing %f", heightAdjPC.points[0].x);
 
 
     pub.publish(heightAdjPC);
+    pubTotal.publish(totalPointcloud);
+    runTimes +=1;
 }
 
 /*
@@ -132,8 +157,9 @@ int main(int argc, char **argv)
     ros::Subscriber scanSub = nh.subscribe(scanTopic, queue_size, &callbacks::scanCallback, &callback);
 
     callback.pub = nh.advertise<sensor_msgs::PointCloud>("slam_cloud2", 1);
+    callback.pubTotal = nh.advertise<sensor_msgs::PointCloud>("slam_cloud_total", 1);
 
-    while(callback.pub.getNumSubscribers() == 0)
+    while(callback.pub.getNumSubscribers() == 0 & callback.pubTotal.getNumSubscribers() == 0)
     {
         ROS_INFO("No subscribers, please wait");
         //wait

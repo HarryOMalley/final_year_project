@@ -8,8 +8,6 @@
 #include <EEPROM.h>
 #include "Control.h"
 
-Encoder motorRight(enc1, enc2);
-Encoder motorLeft(enc3, enc4);
 Control control;
 
 void setup()
